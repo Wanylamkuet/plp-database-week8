@@ -1,0 +1,38 @@
+-- ========================================================
+-- Week 8 Assignment: MySQL Database Backup and Restore
+-- ========================================================
+
+-- ========================================================
+-- Question 1: Creating a Complete Database Backup
+-- ========================================================
+-- Command to run in your system terminal:
+-- mysqldump -u root -p sales > sales_backup.sql
+--
+-- Explanation:
+-- 1. `mysqldump`: The command-line utility used to generate SQL export/backup files.
+-- 2. `-u root`: Specifies the MySQL username to connect with (`root`).
+-- 3. `-p`: Prompts you securely for your MySQL password in the terminal.
+-- 4. `sales`: The name of the specific database being backed up.
+-- 5. `> sales_backup.sql`: Redirects the generated SQL commands into the `sales_backup.sql` file.
+--
+-- Why regular database backups are important:
+-- Regular backups protect critical data from unforeseen disasters such as hardware failures, 
+-- accidental data corruption, malicious attacks, or unintended deletions, ensuring business 
+-- continuity and quick data recovery.
+
+
+-- ========================================================
+-- Question 2: Backing Up All Databases
+-- ========================================================
+-- Command to run in your system terminal:
+-- mysqldump -u root -p --all-databases > all_databases_backup.sql
+--
+-- Explanation:
+-- 1. `--all-databases`: The flag instructing `mysqldump` to export every database hosted on the MySQL server instance.
+-- 2. `-u root -p`: Authenticates the user with password prompting.
+-- 3. `> all_databases_backup.sql`: Captures all server databases, schemas, tables, and data into a single backup file.
+--
+-- Why backing up all databases is important before migrating to another server:
+-- During a server migration, you need to transfer not just your operational data, but also system tables, 
+-- user privileges, stored procedures, logs, and auxiliary databases. Backing up all databases ensures 
+-- that no dependent configurations, schemas, or user accounts are left behind on the old server environment.
